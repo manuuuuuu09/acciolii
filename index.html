@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <title>Accioli | Sistema de Pedidos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="brownies & doces.png" alt="Accioli Logo">
+  <!-- Atalho flutuante que você pediu -->
+<div class="carrinho-topo" onclick="irParaCarrinho()">
+  🛒 <span id="contadorCarrinho">0</span>
+</div>
+
+</header>
+
+<!-- index.html -->
+<!-- index.html -->
+<main>
+  <section class="produtos">
+  <h2>Nossos produtos</h2>
+  <div class="grid">
+    
+    <!-- CARD 1: BROWNIE CLÁSSICO -->
+    <div class="card tooltip-container">
+      <img src="brownie.jpg" alt="Brownie Clássico">
+      <p>BROWNIE CLÁSSICO</p>
+      <span class="tooltiptext"><strong>100g, com 350 kcal</strong><br>Ingredientes: Farinha, cacau, ovos, açúcar, manteiga.</span>
+      <span>R$5,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('brownie-classico', -1)">-</button>
+        <span id="qtd-brownie-classico">1</span>
+        <button onclick="alterarQtdInterna('brownie-classico', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Brownie Clássico', 5, 'brownie-classico')">Adicionar</button>
+    </div>
+
+    <!-- CARD 2: PUDIM -->
+    <div class="card tooltip-container">
+      <img src="pudim.jpg" alt="Pudim">
+      <p>PUDIM</p>
+      <span class="tooltiptext"><strong>180g, com 420 kcal</strong><br>Ingredientes: Leite condensado, leite, ovos, açúcar.</span>
+      <span>R$15,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('pudim', -1)">-</button>
+        <span id="qtd-pudim">1</span>
+        <button onclick="alterarQtdInterna('pudim', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Pudim', 15, 'pudim')">Adicionar</button>
+    </div>
+
+    <!-- CARD 3: BROOKIES -->
+    <div class="card tooltip-container">
+      <img src="brookies.jpg" alt="Brookies">
+      <p>BROOKIES</p>
+      <span class="tooltiptext"><strong>120g, com 380 kcal</strong><br>Ingredientes: Farinha, cacau, gotas de chocolate.</span>
+      <span>R$9,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('brookies', -1)">-</button>
+        <span id="qtd-brookies">1</span>
+        <button onclick="alterarQtdInterna('brookies', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Brookies', 9, 'brookies')">Adicionar</button>
+    </div>
+
+    <!-- CARD 4: BROWNIE C/ MORANGO -->
+    <div class="card tooltip-container">
+      <img src="brownie com mo.jpg" alt="Brownie com Morango">
+      <p>BROWNIE C/ MORANGO</p>
+      <span class="tooltiptext"><strong>130g, com 390 kcal</strong><br>Ingredientes: Brownie clássico, morangos frescos.</span>
+      <span>R$7,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('brownie-morango', -1)">-</button>
+        <span id="qtd-brownie-morango">1</span>
+        <button onclick="alterarQtdInterna('brownie-morango', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Brownie c/ Morango', 7, 'brownie-morango')">Adicionar</button>
+    </div>
+
+    <!-- CARD 5: BISCOITO GATINHO -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="GATINHO.jpg.jpeg">
+      <p>BISCOITO GATINHO</p>
+      <span class="tooltiptext"><strong>80g · 320 kcal</strong><br>Farinha, manteiga, açúcar, ovo, baunilha.</span>
+      <span>R$6,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('biscoito-gatinho', -1)">-</button>
+        <span id="qtd-biscoito-gatinho">1</span>
+        <button onclick="alterarQtdInterna('biscoito-gatinho', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Biscoito Gatinho', 6, 'biscoito-gatinho')">Adicionar</button>
+    </div>
+
+    <!-- CARD 6: TANGHULU -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="TANGHELOKI.jpg.jpeg">
+      <p>TANGHULU HELLO KITTY</p>
+      <span class="tooltiptext"><strong>120g · 250 kcal</strong><br>Morango, uva, açúcar caramelizado.</span>
+      <span>R$10,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('tanghulu', -1)">-</button>
+        <span id="qtd-tanghulu">1</span>
+        <button onclick="alterarQtdInterna('tanghulu', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Tanghulu Hello Kitty', 10, 'tanghulu')">Adicionar</button>
+    </div>
+
+    <!-- CARD 7: CUPCAKE -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="cupcake.jpg.jpeg">
+      <p>CUPCAKE RED VELVET</p>
+      <span class="tooltiptext"><strong>140g · 410 kcal</strong><br>Farinha, cacau, ovos, cream cheese.</span>
+      <span>R$8,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('cupcake', -1)">-</button>
+        <span id="qtd-cupcake">1</span>
+        <button onclick="alterarQtdInterna('cupcake', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Cupcake Red Velvet', 8, 'cupcake')">Adicionar</button>
+    </div>
+
+    <!-- CARD 8: DONUT -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="donutbobss.jpg.jpeg">
+      <p>DONUT DO BOB ESPONJA</p>
+      <span class="tooltiptext"><strong>110g · 360 kcal</strong><br>Farinha, açúcar, leite, ovos.</span>
+      <span>R$7,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('donut', -1)">-</button>
+        <span id="qtd-donut">1</span>
+        <button onclick="alterarQtdInterna('donut', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Donut do Bob Esponja', 7, 'donut')">Adicionar</button>
+    </div>
+
+    <!-- CARD 9: BOLO GIRASSOL -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="girassol.jpg.jpeg">
+      <p>BOLO GIRASSOL</p>
+      <span class="tooltiptext"><strong>160g · 430 kcal</strong><br>Farinha, ovos, manteiga, chocolate branco.</span>
+      <span>R$12,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('bolo-girassol', -1)">-</button>
+        <span id="qtd-bolo-girassol">1</span>
+        <button onclick="alterarQtdInterna('bolo-girassol', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Bolo Girassol', 12, 'bolo-girassol')">Adicionar</button>
+    </div>
+
+    <!-- CARD 10: BOMBOM DE UVA -->
+    <div class="card tooltip-container">
+      <span class="selo novo">NOVO</span>
+      <img src="bombomuva.jpg.jpeg">
+      <p>BOMBOM DE UVA</p>
+      <span class="tooltiptext"><strong>90g · 370 kcal</strong><br>Uva, leite condensado, chocolate.</span>
+      <span>R$8,00</span>
+      <div class="seletor-qtd">
+        <button onclick="alterarQtdInterna('bombom-uva', -1)">-</button>
+        <span id="qtd-bombom-uva">1</span>
+        <button onclick="alterarQtdInterna('bombom-uva', 1)">+</button>
+      </div>
+      <button class="btn-adicionar" onclick="adicionarItemComQtd('Bombom de Uva', 8, 'bombom-uva')">Adicionar</button>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+    <div class="dados-cliente">
+      <h3>Dados do Cliente</h3>
+      <input type="text" id="nome" placeholder="Nome completo">
+      <input type="text" id="telefone" placeholder="Telefone">
+      <input type="text" id="endereco" placeholder="Endereço">
+      <textarea id="obs" placeholder="Observações (opcional)"></textarea>
+    </div>
+
+    <div class="cupom-area">
+      <input type="text" id="inputCupom" placeholder="Cupom de desconto (opcional)">
+      <button onclick="aplicarCupom()">Aplicar</button>
+      <div id="msgCupom" class="cupom-msg"></div>
+    </div>
+
+        <div class="pagamento">
+      <select id="metodoPagamento" onchange="atualizarPagamento()">
+        <option value="">Selecione o método de pagamento</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Pix">Pix</option>
+        <option value="CartaoVirtual">Cartão Virtual</option>
+        <option value="CartaoCredito"> Cartão de Credito</option>
+        <option value="CartaoDebito"> Cartão de Débito</option>
+      </select>
+      
+      <!-- Adicionado style="display:none;" aqui -->
+      <div class="pix-area" id="pixArea" style="display:none;">
+        <p>Escaneie o QR Code:</p>
+        <img id="qrPix" src="qrcode.jpg" alt="QR Code Pix">
+      </div>
+
+      <!-- Adicionado style="display:none;" aqui -->
+      <div class="cartao-area" id="cartaoArea" style="display:none;">
+        <h4>Pagamento com Cartão Virtual</h4>
+        <input type="text" id="numeroCartao" placeholder="Número do cartão">
+        <div class="linha-cartao">
+          <input type="text" id="validadeCartao" placeholder="MM/AA">
+          <input type="text" id="cvvCartao" placeholder="CVV">
+        </div>
+        
+        <div class="cartao-area" id="cartaoArea" style="display:none;">
+  <h4 id="tituloCartao">Dados do Cartão</h4>
+  <input type="text" id="nomeCartao" placeholder="Nome impresso no cartão">
+  <input type="text" id="numeroCartao" placeholder="0000 0000 0000 0000">
+  <div class="linha-cartao">
+    <input type="text" id="validadeCartao" placeholder="MM/AA">
+    <input type="text" id="cvvCartao" placeholder="CVV">
+  </div>
+  
+  <!-- Parcelamento para Crédito e Virtual -->
+  <div id="areaParcelas" style="display:none; margin-top: 10px;">
+    <label style="font-size: 12px; color: var(--bege);">Opções de Parcelamento:</label>
+    <select id="selectParcelas"></select>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <section class="pedido">
+    <h2>Seu pedido</h2>
+    <ul id="listaPedido"></ul>
+    <p>Itens: <strong id="totalItens">0</strong></p>
+    <p>Total: <strong>R$ <span id="totalValor">0.00</span></strong></p>
+    <button class="finalizar" onclick="finalizarPedido()">FINALIZAR PEDIDO</button>
+    <p id="mensagemFinal" class="mensagem-final"></p>
+  </section>
+</main>
+
+
+<footer>
+  <p>© 2026 Accioli Brownies & Doces — Sistema de Pedidos</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
